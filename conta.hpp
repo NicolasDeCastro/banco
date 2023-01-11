@@ -3,19 +3,19 @@
 #include <iostream>
 #include "titular.hpp"
 
-struct conta{
+struct Conta{
 private:
     std::string numero;
-    Titular Titular;
+    Titular titular;
     float saldo;
 
-public: 
-    conta(std::string numero,Titular Titular);
+public:
+    Conta(std::string numero,Titular titular);
     void sacar(float valor_a_sacar);
     void depositar(float valor_a_depositar);
     float recupera_saldo();
     static int NumeroDeContas;
-    ~conta();
-    
-    
+    ~Conta();
+
+
 };

@@ -6,13 +6,13 @@ using namespace std;
 
 int main()
 {
-    
-    conta umaconta("12345","nicolas");
-    
-    umaconta.depositar(100);
-    umaconta.sacar(2);
- 
-    cout << umaconta.recupera_saldo() << endl;
-    
+    Titular um_titular("123.456.789-10", "nicolas");
+    Conta uma_conta("12345", um_titular);
+
+    uma_conta.depositar(100);
+    uma_conta.sacar(2);
+
+    cout << uma_conta.recupera_saldo() << endl;
+
     return 0;
 }
