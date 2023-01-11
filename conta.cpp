@@ -1,11 +1,10 @@
-#pragma once
 #include <iostream>
 #include "conta.hpp"
 
-int conta::NumeroDeContas = 0;
-conta::conta(std::string numero,Titular Titular):
+int Conta::NumeroDeContas = 0;
+Conta::Conta(std::string numero,Titular titular):
     numero(numero),
-    Titular(Titular),
+    titular(titular),
     saldo(0)
 {
 
@@ -13,7 +12,7 @@ conta::conta(std::string numero,Titular Titular):
 
 }
 
-void conta::sacar(float valor_a_sacar){
+void Conta::sacar(float valor_a_sacar){
 
  if (saldo<valor_a_sacar){
            std:: cout<<"nao tem como vc sacar menos do que vc tem !!" << std::endl;
@@ -21,7 +20,7 @@ void conta::sacar(float valor_a_sacar){
         }
         if(valor_a_sacar<0){
 
-           std::cout<<"não pode sacar um valor negativo"<< std::endl;
+           std::cout<<"nï¿½o pode sacar um valor negativo"<< std::endl;
             return;
         }
     saldo -= valor_a_sacar;
@@ -32,7 +31,7 @@ void conta::sacar(float valor_a_sacar){
 
 
 
-void conta::depositar(float valor_a_depositar){
+void Conta::depositar(float valor_a_depositar){
 
 
  if(valor_a_depositar<0){
@@ -44,14 +43,14 @@ void conta::depositar(float valor_a_depositar){
 
 }
 
-float conta::recupera_saldo()
+float Conta::recupera_saldo()
 {
     return saldo;
 }
 
 
 
-conta:: ~conta() 
+Conta:: ~Conta()
 {
 
     NumeroDeContas--;
